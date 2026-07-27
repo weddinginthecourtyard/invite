@@ -77,53 +77,59 @@ button,a,input{font:inherit}
 #lastName{top:61.05%}
 
 .radio{
-    pointer-events: auto;
-    position: absolute;
+    pointer-events:auto;
+    position:absolute;
 
-    left: 43.6%;
+    left:43.9%;
 
-    width: 3.4%;
-    height: 2.3%;
+    width:4.2%;
+    height:2.8%;
 }
 
 .yes{
-    top: 67.95%;
+    top:67.85%;
 }
 
 .no{
-    top: 70.70%;
+    top:70.55%;
 }
 
 .radio input{
-    position: absolute;
-    inset: 0;
-    margin: 0;
-    opacity: 0;
-    cursor: pointer;
+    position:absolute;
+    inset:0;
+    margin:0;
+    opacity:0;
+    cursor:pointer;
 }
 
 .radio i{
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
+    position:relative;
+    display:block;
+    width:100%;
+    height:100%;
 }
 
 .radio input:checked + i::after{
-    content: "";
-    position: absolute;
+    position:absolute;
+    left:50%;
+    top:50%;
 
-    left: 50%;
-    top: 50%;
+    color:#315a8f;
+    font-family:Georgia,serif;
+    font-weight:700;
+    line-height:1;
 
-    width: 9px;
-    height: 9px;
+    transform:translate(-50%,-50%);
+}
 
-    background: #315a8f;
-    border-radius: 50%;
+.yes input:checked + i::after{
+    content:"✓";
+    font-size:18px;
+}
 
-    transform: translate(-50%, -50%);
+.no input:checked + i::after{
+    content:"×";
+    font-size:20px;
 }
 
 .thanksBox{padding:40px 23px 29px;text-align:center;color:#315a8f}
