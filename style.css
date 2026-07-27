@@ -1,0 +1,80 @@
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#102f5c;color:#102f5c;font-family:Georgia,"Times New Roman",serif}
+button,a,input{font:inherit}
+.view{position:fixed;inset:0;background:#102f5c;animation:fade .2s ease}
+.view[hidden],.overlay[hidden]{display:none!important}
+.art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+
+/* Small seal, placed above the name/date area so it never covers date, venue or time. */
+.seal{
+ position:absolute;z-index:5;right:max(10px,calc(env(safe-area-inset-right) + 8px));top:67.2%;
+ width:42px;height:42px;border:0;padding:0;background:none;cursor:pointer;
+ filter:drop-shadow(0 3px 5px #071a3838);transform:translateY(-50%)
+}
+.seal:active{transform:translateY(-50%) scale(.95)}
+.seal img{width:100%;height:100%;display:block}
+
+.overlay{
+ position:fixed;inset:0;z-index:20;display:grid;place-items:center;padding:18px;
+ background:#102f5c20;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)
+}
+.popup,.thanksBox{
+ position:relative;width:min(76vw,286px);padding:28px 18px 12px;
+ background:#f8eee0bd;border:1px solid #ffffff80;border-radius:15px;
+ box-shadow:0 14px 38px #071a3838;
+ backdrop-filter:blur(13px);-webkit-backdrop-filter:blur(13px)
+}
+.popup:before,.thanksBox:before{
+ content:"";position:absolute;inset:7px;border:1px solid #315a8f38;border-radius:10px;pointer-events:none
+}
+.x{
+ position:absolute;z-index:3;right:6px;top:1px;width:32px;height:32px;border:0;background:none;
+ color:#315a8f;font:300 24px/1 Georgia;cursor:pointer
+}
+.opt{
+ position:relative;z-index:1;width:100%;min-height:44px;display:flex;align-items:center;gap:10px;
+ padding:8px 5px;border:0;border-bottom:1px solid #315a8f2b;background:none;color:#315a8f;
+ text-decoration:none;text-align:left;font:14px Georgia,serif;cursor:pointer
+}
+.opt:last-child{border-bottom:0}
+.opt svg{width:18px;height:18px;flex:0 0 18px;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
+
+.back{
+ position:absolute;z-index:8;top:max(12px,calc(env(safe-area-inset-top) + 7px));left:12px;
+ width:38px;height:38px;border:1px solid #ffffff8a;border-radius:50%;
+ background:#102f5cbf;color:#fff;font-size:22px;line-height:1;box-shadow:0 5px 15px #071a3840
+}
+.stage,#form{position:absolute;inset:0}
+#form{pointer-events:none}
+#formCanvas{position:absolute;pointer-events:none;transform-origin:top left;width:864px;height:1536px}
+
+#firstName,#lastName{
+ pointer-events:auto;position:absolute;left:38.0%;width:33.2%;height:3.65%;
+ padding:0 12px 0 28px;border:0;outline:0;background:transparent;color:#315a8f;
+ font:600 18px Georgia,serif
+}
+#firstName{top:55.8%}
+#lastName{top:61.05%}
+
+.radio{pointer-events:auto;position:absolute;left:44.35%;width:4.7%;height:2.85%}
+.yes{top:67.75%}
+.no{top:70.25%}
+.radio input{position:absolute;opacity:0}
+.radio i{position:absolute;inset:0;border-radius:50%}
+.radio input:checked+i:after{
+ content:"";position:absolute;left:31%;top:31%;width:38%;height:38%;border-radius:50%;background:#315a8f
+}
+.send{
+ pointer-events:auto;position:absolute;left:43.8%;top:73.75%;width:19.8%;height:4.4%;
+ border:0;background:transparent;cursor:pointer
+}
+
+.thanksBox{padding:40px 23px 29px;text-align:center;color:#315a8f}
+.thanksBox b,.thanksBox span{position:relative;z-index:1;display:block}
+.thanksBox b{font-size:16px;margin-bottom:8px}
+.thanksBox span{font-size:13px}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@media(min-width:900px){
+ .seal{width:46px;height:46px;right:18px}
+ .popup{width:292px}
+}
