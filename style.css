@@ -80,10 +80,10 @@ button,a,input{font:inherit}
     pointer-events: auto;
     position: absolute;
 
-    left: 44.1%;
+    left: 43.6%;
 
-    width: 3.2%;
-    height: 2.0%;
+    width: 3.4%;
+    height: 2.3%;
 }
 
 .yes{
@@ -95,25 +95,35 @@ button,a,input{font:inherit}
 }
 
 .radio input{
-    position:absolute;
-    opacity:0;
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
 }
 
 .radio i{
-    position:absolute;
-    inset:0;
-    border-radius:50%;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
 
 .radio input:checked + i::after{
-    content:"";
-    position:absolute;
-    left:30%;
-    top:30%;
-    width:40%;
-    height:40%;
-    border-radius:50%;
-    background:#315a8f;
+    content: "";
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 9px;
+    height: 9px;
+
+    background: #315a8f;
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
 }
 
 .thanksBox{padding:40px 23px 29px;text-align:center;color:#315a8f}
