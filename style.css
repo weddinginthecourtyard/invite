@@ -76,17 +76,44 @@ button,a,input{font:inherit}
 #firstName{top:55.8%}
 #lastName{top:61.05%}
 
-.radio{pointer-events:auto;position:absolute;left:44.35%;width:4.7%;height:2.85%}
-.yes{top:67.75%}
-.no{top:70.25%}
-.radio input{position:absolute;opacity:0}
-.radio i{position:absolute;inset:0;border-radius:50%}
-.radio input:checked+i:after{
- content:"";position:absolute;left:31%;top:31%;width:38%;height:38%;border-radius:50%;background:#315a8f
+.radio{
+    pointer-events: auto;
+    position: absolute;
+
+    left: 44.1%;
+
+    width: 3.2%;
+    height: 2.0%;
 }
-.send{
- pointer-events:auto;position:absolute;left:43.8%;top:73.75%;width:19.8%;height:4.4%;
- border:0;background:transparent;cursor:pointer
+
+.yes{
+    top: 67.95%;
+}
+
+.no{
+    top: 70.70%;
+}
+
+.radio input{
+    position:absolute;
+    opacity:0;
+}
+
+.radio i{
+    position:absolute;
+    inset:0;
+    border-radius:50%;
+}
+
+.radio input:checked + i::after{
+    content:"";
+    position:absolute;
+    left:30%;
+    top:30%;
+    width:40%;
+    height:40%;
+    border-radius:50%;
+    background:#315a8f;
 }
 
 .thanksBox{padding:40px 23px 29px;text-align:center;color:#315a8f}
